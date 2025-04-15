@@ -19,7 +19,8 @@
     "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
     "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start-mobile": "PORT=4000 REACT_APP_HOST=192.168.11.71 react-scripts start"
   },
   "eslintConfig": {
     "extends": [

@@ -1,0 +1,91 @@
+.auth-container {
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  z-index: 2;
+}
+
+.auth-form {
+  background: var(--light);
+  padding: 3rem 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  width: 100%;
+}
+
+.auth-form h2 {
+  font-family: var(--font-primary);
+  margin-bottom: 2rem;
+  color: var(--dark);
+  font-size: 2.2rem;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.auth-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gray);
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.google-sign-in {
+  background: transparent;
+  color: var(--dark);
+  border: 1px solid var(--light-gray);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.google-sign-in:hover {
+  background: var(--light-gray);
+  border-color: var(--gray);
+}
+
+.auth-error {
+  color: #a94442;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.auth-form button[type="submit"] {
+  width: 100%;
+  padding: 1rem;
+  background: var(--primary);
+  color: var(--light);
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+}
+
+.auth-form button[type="submit"]:hover {
+  background: var(--primary-dark);
+}
+
+.auth-form button[type="submit"]:disabled {
+  background: var(--light-gray);
+  color: var(--gray);
+  cursor: not-allowed;
+} 
