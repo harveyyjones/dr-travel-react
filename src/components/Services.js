@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import './Services.css';
+import HeroBanner from './HeroBanner';
 
 const Services = () => {
   const scrollRef = useRef(null);
@@ -72,15 +73,7 @@ const Services = () => {
 
   return (
     <section className="services">
-      <div className="hero">
-        <div className="hero-content">
-          <h1>Your Journey to Excellence in Health & Luxury</h1>
-          <p>Experience world-class medical treatments in Turkey's most prestigious facilities, 
-          combined with luxury travel and five-star accommodations. Where your health meets 
-          the beauty of the Mediterranean.</p>
-          <button className="hero-button">Start Your Journey</button>
-        </div>
-      </div>
+      <HeroBanner />
       
       <div className="services-grid" ref={scrollRef}>
         {services.map((service, index) => (
