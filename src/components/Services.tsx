@@ -2,11 +2,17 @@ import React, { useRef, useEffect } from 'react';
 import './Services.css';
 import HeroBanner from './HeroBanner';
 
-const Services = () => {
-  const scrollRef = useRef(null);
-  const autoScrollRef = useRef(null);
+interface Service {
+  title: string;
+  description: string;
+  image: string;
+}
 
-  const services = [
+const Services: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const autoScrollRef = useRef<NodeJS.Timeout | null>(null);
+
+  const services: Service[] = [
     {
       title: "Premium Medical Treatments",
       description: "Expert dental procedures, hair transplants, and aesthetic surgeries at world-renowned clinics in Turkey. Experience top-quality healthcare at competitive prices.",
@@ -35,7 +41,7 @@ const Services = () => {
   ];
 
   useEffect(() => {
-    const startAutoScroll = () => {
+    const startAutoScroll = (): void => {
       if (scrollRef.current) {
         const scrollAmount = scrollRef.current.scrollLeft + scrollRef.current.offsetWidth;
         if (scrollAmount >= scrollRef.current.scrollWidth) {
@@ -53,8 +59,12 @@ const Services = () => {
     if (scrollContainer) {
       autoScrollRef.current = setInterval(startAutoScroll, 10000);
 
-      scrollContainer.addEventListener('mouseenter', () => clearInterval(autoScrollRef.current));
-      scrollContainer.addEventListener('touchstart', () => clearInterval(autoScrollRef.current));
+      scrollContainer.addEventListener('mouseenter', () => {
+        if (autoScrollRef.current) clearInterval(autoScrollRef.current);
+      });
+      scrollContainer.addEventListener('touchstart', () => {
+        if (autoScrollRef.current) clearInterval(autoScrollRef.current);
+      });
       
       scrollContainer.addEventListener('mouseleave', () => {
         autoScrollRef.current = setInterval(startAutoScroll, 10000);

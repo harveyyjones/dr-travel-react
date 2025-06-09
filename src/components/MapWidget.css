@@ -1,0 +1,236 @@
+/* Map Widget Styles */
+.map-widget {
+  background: linear-gradient(135deg, var(--light) 0%, white 100%);
+  padding: 4rem 0;
+  margin-bottom: 2rem;
+}
+
+.map-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.map-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.map-header h2 {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.map-header p {
+  font-size: 1.1rem;
+  color: var(--gray);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.map-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.map-frame {
+  position: relative;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  border: 1px solid var(--light-gray);
+}
+
+.map-frame iframe {
+  filter: grayscale(20%) contrast(1.1);
+  transition: var(--transition);
+}
+
+.map-frame:hover iframe {
+  filter: grayscale(0%) contrast(1);
+}
+
+.map-overlay {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(26, 26, 26, 0.9);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(10px);
+}
+
+.luxury-branding span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.locations-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.location-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  border: 1px solid var(--light-gray);
+}
+
+.location-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.location-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.location-header h3 {
+  font-family: var(--font-primary);
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.location-marker {
+  font-size: 1.2rem;
+  color: var(--secondary);
+}
+
+.location-address {
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.location-description {
+  font-size: 0.85rem;
+  color: var(--gray);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.location-contact {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contact-btn {
+  background-color: transparent;
+  color: var(--secondary);
+  border: 1px solid var(--secondary);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--border-radius);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.contact-btn:hover {
+  background-color: var(--secondary);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.map-stats {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.stat {
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.stat-number {
+  display: block;
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+  color: var(--accent);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--light);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .map-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .map-header h2 {
+    font-size: 2rem;
+  }
+  
+  .map-frame iframe {
+    height: 300px;
+  }
+  
+  .locations-sidebar {
+    order: -1;
+  }
+  
+  .map-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-widget {
+    padding: 2rem 0;
+  }
+  
+  .location-card {
+    padding: 1.5rem;
+  }
+  
+  .location-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .map-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+} 

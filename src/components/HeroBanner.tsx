@@ -1,7 +1,7 @@
 import React from 'react';
 import './HeroBanner.css';
 
-const HeroBanner = () => {
+const HeroBanner: React.FC = () => {
   return (
     <div className="hero">
       <div className="hero-content">
