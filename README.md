@@ -60,3 +60,4 @@ src/
 ## Learn More
 
 To learn more about React, check out the [React documentation](https://reactjs.org/).
+# web-school-project-luxe
